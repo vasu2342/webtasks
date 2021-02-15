@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block javascript %}
+  <script src="{% static 'books/js/books.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Router</h1>
+
+  <p>
+    <button type="button" class="btn btn-primary js-create-book" data-url="{% url 'book_create' %}">
+      <span class="glyphicon glyphicon-plus"></span>
+      New Router
+    </button>
+  </p>
+
+  <table class="table" id="book-table">
+    <thead>
+      <tr>
+        <th>sap_id</th>
+        <th>Ipv4</th>
+        <th>mac_address</th>
+        <th>Loopback_ipv4</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% include 'books/includes/partial_book_list.html' %}
+    </tbody>
+  </table>
+
+  <div class="modal fade" id="modal-book">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
