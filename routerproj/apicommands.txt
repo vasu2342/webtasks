@@ -1,0 +1,32 @@
+running the commnads:
+
+step1:
+ run python manage.py runserver
+ 
+step2:
+
+ python manage.py createsuperuser
+ 
+step3:(open a seconterminal):
+
+ pip install httpie
+ 
+step4:
+ 
+ http POST http://localhost:8000/get-api-token/ username='vasu' password='vasu'
+ 
+ copy a token
+ 
+step5:
+
+ http http://localhost:8000/list/ "Authorization: Token 53787cc922f5cd63f60c23de9d9748cac0b8075d"
+ 
+step6:
+
+ http PATCH http://localhost:8000/update/4.4.4.4 "Authorization: Token 53787cc922f5cd63f60c23de9d9748cac0b8075d"
+ 
+step7:
+ 
+ http DELETE http://localhost:8000/delete/4.4.4.4 "Authorization: Token 53787cc922f5cd63f60c23de9d9748cac0b8075d"
+
+
